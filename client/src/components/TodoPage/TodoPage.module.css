@@ -68,7 +68,7 @@ header{
 }
 .todo_container{
     overflow-y: auto;
-    height: 30rem;
+    height: 27.8rem;
 }
 .todo_items_item{
     justify-content: space-between;
