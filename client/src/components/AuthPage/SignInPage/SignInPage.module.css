@@ -1,0 +1,185 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 690px;
+    height: 100vh;
+}
+
+
+.auth_card{
+    background-color: #25273C;
+    border-radius: 4px;
+    width: 556px;
+    height: 670px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.auth_card_header img{
+    width: 220px;
+    height: 63px;
+}
+.auth_card_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 8px 0;
+}
+.auth_card_footer{
+    height: 71px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.auth_card_content{
+    margin: 0 auto;
+}
+.card_content_header{
+    display: flex;
+    justify-content: center;
+    color: #686A7F;
+    font-size: 36px;
+}
+.card_content{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0
+}
+.card_content input{
+    margin: 15px 0;
+    width: 480px;
+    border-radius: 4px;
+    border: 1px solid #686A7F;
+    background-color: #25273C;
+    font-size: 1.2rem;
+    padding: 12px 8px;
+}
+.card_content_action{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.card_content_action img{
+    width: 30px;
+    height: auto;
+    margin-left: 5px;
+}
+.card_content_action button{
+    background-color: #25273C;
+    border-radius: 4px;
+    border: 1px solid #686A7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 10px 35px;
+    color: #686A7F;
+}
+
+@media screen and (max-width: 730px){
+    .auth_card_header img{
+        width: 180px;
+        height: 52px;
+    }
+    .auth_card{
+        width: 450px;
+        height: 600px;
+    }
+    .card_content_header{
+        font-size: 30px;
+    }
+    .card_content{
+        align-items: center;
+    }
+    .card_content input{
+        margin: 10px 0;
+        width: 400px;;
+        font-size: 1.1rem;
+        padding: 8px 4px;
+    }
+    .card_content_action button{
+        font-size: 1.1rem;
+        padding: 5px 20px;
+        color: #686A7F;
+    }
+    .card_content_action{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+    .auth_card_footer{
+        height: 60px;
+    }
+}
+@media screen and (max-width: 465px){
+    .auth_card_header img{
+        width: 160px;
+        height: 47px;
+    }
+    .auth_card{
+        width: 400px;
+        height: 560px;
+    }
+    .card_content_header{
+        font-size: 30px;
+    }
+    .card_content{
+        align-items: center;
+    }
+    .card_content input{
+        margin: 10px 0;
+        width: 350px;
+        font-size: 1rem;
+        padding: 8px 4px;
+    }
+    .card_content_action button{
+        font-size: 1rem;
+        padding: 5px 15px;
+        color: #686A7F;
+    }
+    .card_content_action{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+    .auth_card_footer{
+        height: 55px;
+    }
+}
+@media screen and (max-width: 465px){
+    .auth_card_header img{
+        width: 160px;
+        height: 47px;
+    }
+    .auth_card{
+        width: 370px;
+        height: 540px;
+    }
+    .card_content_header{
+        font-size: 25px;
+    }
+    .card_content{
+        align-items: center;
+    }
+    .card_content input{
+        margin: 10px 0;
+        width: 320px;
+        font-size: 1rem;
+        padding: 8px 4px;
+    }
+    .card_content_action button{
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        color: #686A7F;
+    }
+    .card_content_action{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 25px;
+    }
+    .auth_card_footer{
+        height: 55px;
+    }
+}

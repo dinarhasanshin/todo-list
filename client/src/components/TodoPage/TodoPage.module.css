@@ -1,0 +1,122 @@
+.container{
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 690px;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 105px 3px 37px;
+}
+.logo img{
+    width: 170px;
+    height: 50px;
+}
+.exit img{
+    width: 44px;
+    height: 44px;
+}
+.exit:hover{
+    cursor: pointer;
+}
+.todo_items{
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    margin: 0 auto;
+}
+.add_todo{
+    max-width: 690px;
+    height: 65px;
+    border-radius: 4px;
+    background-color: #25273B;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.todo_shadow{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+}
+.check_todo{
+    width: 33px;
+    height: 33px;
+    border: 1px solid #6E7085;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0);
+    margin-left: 11px;
+    transition: all 0.8s ease-out;
+}
+.check_todo:hover{
+    background-color: red;
+    cursor: pointer;
+}
+.text_todo{
+    font-size: 18px;
+    margin-left: 36px;
+    color: #686A7F;
+}
+.todo_left{
+    display: flex;
+    align-items: center;
+}
+.todo_container{
+    overflow-y: auto;
+    height: 30rem;
+}
+.todo_items_item{
+    justify-content: space-between;
+    border-bottom: 2px solid #3D3F54;
+    border-radius: 0
+}
+.close_todo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+.active {
+    background-color: red;
+}
+@media screen and (max-width: 730px) {
+    body{
+        height: 100vh;
+        background: linear-gradient(0deg, #171723 63%, #3A1C9E 34%);
+    }
+    .logo img{
+        width: 150px;
+        height: 44px;
+    }
+    .exit img{
+        width: 40px;
+        height: 40px;
+    }
+    .check_todo{
+        width: 23px;
+        height: 23px;
+    }
+    .add_todo{
+        height: 50px
+    }
+
+    .text_todo{
+        font-size: 1rem;
+    }
+    .close_todo img{
+        width: 15px;
+        height: 15px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .text_todo{
+        margin-left: 10px;
+        font-size: 0.9rem;
+    }
+}
+
