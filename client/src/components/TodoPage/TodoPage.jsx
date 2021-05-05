@@ -27,7 +27,6 @@ export const TodoPage = () => {
             Authorization: `Bearer ${token}`
         })
         setTodos(updateObjectInArray(todos, data, '_id', '_id'))
-        console.log(data)
     }
 
     useEffect(async () => {
