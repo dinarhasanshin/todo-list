@@ -12,6 +12,7 @@ export const TodoPage = () => {
     const {userId, token, isCompleted, logout} = useContext((AuthContext))
     const {request, loading} = useApi()
     const [todos, setTodos] = useState([])
+    const [currentItem, setCurrentItem] = useState(null)
     
     const deleteItem = async (todoId) => {
         if (todoId) {
@@ -26,7 +27,20 @@ export const TodoPage = () => {
         const data = await request('todoApi/todo/update', 'POST', {todoId, field, value}, {
             Authorization: `Bearer ${token}`
         })
-        setTodos(updateObjectInArray(todos, data, '_id', '_id'))
+        //Временное решение
+        const data_ = await request('todoApi/todo/', 'GET', null, {
+            Authorization: `Bearer ${token}`
+        })
+        setTodos(data_)
+        //TODO Решить проблему с обновление элемента в массие при перетаскивании
+        // setTodos(updateObjectInArray(todos, data, '_id'))
+    }
+    const sortItems = (a,b) => {
+        if (a.order > b.order){
+            return 1
+        }else{
+            return -1
+        }
     }
 
     useEffect(async () => {
@@ -73,9 +87,10 @@ export const TodoPage = () => {
                 </form>
                 <div className={s.todo_container}>
                     {
-                        todos.map((item, index) => {
+                        todos.sort(sortItems).map((item, index) => {
                             return <TodoItem key={index} item={item} deleteItem={deleteItem} isCompleted={item.isCompleted}
-                                             updateTodo={updateTodo}/>
+                                             updateTodo={updateTodo} setTodos={setTodos} todos={todos} currentItem={currentItem}
+                                             setCurrentItem={setCurrentItem}/>
                         })
                     }
                 </div>

@@ -4,7 +4,8 @@ const schema = new Schema({
     name: {type: String, required: true},
     email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
-    todos: {type: Types.ObjectId, ref: 'Todo'}
+    todos: {type: Types.ObjectId, ref: 'Todo'},
+    maxOrder: {type: Number, default: 0, required: true}
 })
 
 module.exports = model('User', schema)

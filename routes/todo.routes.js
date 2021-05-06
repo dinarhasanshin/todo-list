@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const Todo = require('../models/Todo')
 const auth = require('../middleware/auth.middleware')
+const User = require('../models/User')
 
 const router = Router()
 
@@ -10,8 +11,12 @@ router.post('/create', auth, async (req, res) => {
 
         const {title, owner} = req.body
 
-        const todo = new Todo({ title, owner })
+
+        const user = await User.findOne({ _id: req.user.userId })
+        user.maxOrder++
+        const todo = new Todo({ title, owner, order: user.maxOrder })
         await todo.save()
+        await user.save()
 
         res.json({ todo })
     }catch (e) {
