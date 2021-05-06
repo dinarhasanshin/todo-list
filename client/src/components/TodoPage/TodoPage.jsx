@@ -13,6 +13,7 @@ export const TodoPage = () => {
     const {request, loading} = useApi()
     const [todos, setTodos] = useState([])
     const [currentItem, setCurrentItem] = useState(null)
+
     
     const deleteItem = async (todoId) => {
         if (todoId) {

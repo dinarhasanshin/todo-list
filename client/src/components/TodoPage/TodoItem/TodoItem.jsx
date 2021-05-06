@@ -4,6 +4,13 @@ import Delete from "../../../assets/images/Vector.png";
 
 export const TodoItem = ({item, deleteItem, isCompleted, updateTodo, todos, currentItem, setCurrentItem}) => {
 
+    const [editMode, setEditMode] = useState(false)
+    const [itemValue, setItemValue] = useState(item.title)
+
+    const pressHandler = (e) => {
+        updateTodo(item._id, "title", itemValue)
+        setEditMode(false)
+    }
 
     const dragStartHandler = (e, item) => {
         setCurrentItem(item)
@@ -48,7 +55,13 @@ export const TodoItem = ({item, deleteItem, isCompleted, updateTodo, todos, curr
                     <button className={isCompleted === true ? s.check_todo + " " + s.active : s.check_todo} onClick={() => {updateTodo(item._id, "isCompleted", !isCompleted)}}>
                     </button>
                     <div className={s.text_todo}>
-                        <span>{item.title}</span>
+                        {
+                            editMode ? <input type="text" autoFocus={true} onBlur={ pressHandler}
+                                              onChange={(e) => {setItemValue(e.target.value)}}
+                                               value={itemValue}/>
+                                : <span onClick={() => {setEditMode(true)}}>{item.title}</span>
+                        }
+
                     </div>
                 </div>
                 <div className={s.close_todo}>
