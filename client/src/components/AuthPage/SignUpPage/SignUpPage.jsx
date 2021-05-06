@@ -30,7 +30,7 @@ export const SignUpPage = () => {
         onSubmit: async (values) => {
             try {
                 const data = await request('todoApi/auth/register', 'POST', {...values})
-                if (success){
+                if (data.message === "Пользователь создан"){
                     history.push('/todos')
                 }
             }catch (e) {}
