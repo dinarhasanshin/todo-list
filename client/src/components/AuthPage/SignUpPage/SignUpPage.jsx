@@ -31,7 +31,7 @@ export const SignUpPage = () => {
             try {
                 const data = await request('todoApi/auth/register', 'POST', {...values})
                 if (data.message === "Пользователь создан"){
-                    history.push('/todos')
+                    history.push('/signIn')
                 }
             }catch (e) {}
         },
